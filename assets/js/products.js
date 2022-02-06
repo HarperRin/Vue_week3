@@ -72,7 +72,7 @@ const app = createApp({
             // 根據 isNew 來判斷要串接 post 或是 put API
 			// 如果this.isNew 是false狀態，就是編輯狀態
             if(!this.isNew) {
-                api = `${this.url}/api/${this.path}/admin/product/${this.tempProduct.id}`;
+                api = `${this.url}/api/${this.path}/admin/product/${this.temp.id}`;
                 method = 'put';
             }
             // 因 post 和 put 需要帶的參數相同，成功後的行為也相同（整體函式架構長一樣），所以可以寫在一起
@@ -91,7 +91,7 @@ const app = createApp({
                 })
         },
         delProduct() {
-            const api = `${this.url}/api/${this.path}/admin/product/${this.tempProduct.id}`;
+            const api = `${this.url}/api/${this.path}/admin/product/${this.temp.id}`;
             axios.delete(api)
                 .then((res) => {
                     alert(response.data.message);
