@@ -80,7 +80,7 @@ const app = createApp({
             // 按照API格式把資料帶進來
             axios[method](api, { data: this.temp })
                 .then((res) => {
-                    alert(response.data.message);
+                    alert(res.data.message);
                     // 把Modal收起來
                     productModal.hide();
                     // 再取得一次資料
@@ -94,10 +94,10 @@ const app = createApp({
             const api = `${this.url}/api/${this.path}/admin/product/${this.temp.id}`;
             axios.delete(api)
                 .then((res) => {
-                    alert(response.data.message);
+                    alert(res.data.message);
+                    delProductModal.hide();
                     // 再取得一次資料
                     this.getProducts();
-                    delProductModal.hide();
                 })
                 .catch((err) => {
                     alert(err.data.message);
