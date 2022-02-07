@@ -78,7 +78,7 @@ const app = createApp({
             // 因 post 和 put 需要帶的參數相同，成功後的行為也相同（整體函式架構長一樣），所以可以寫在一起
 			// axios[method] = axios.method物件取值
             // 按照API格式把資料帶進來
-            axios[method](api, { data: this.tempProduct })
+            axios[method](api, { data: this.temp })
                 .then((res) => {
                     alert(response.data.message);
                     // 把Modal收起來
